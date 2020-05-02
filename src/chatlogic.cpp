@@ -222,6 +222,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     //rootNode->MoveChatbotHere(_chatBot);
 
     unique_ptr<ChatBot> chatBot = make_unique<ChatBot>();
+    chatBot->SetChatLogicHandle(this);
     chatBot->SetRootNode(rootNode);
     rootNode->MoveChatbotHere(std::move(chatBot));
 
