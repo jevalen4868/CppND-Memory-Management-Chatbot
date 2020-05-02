@@ -225,6 +225,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     chatBot->SetChatLogicHandle(this);
     chatBot->SetRootNode(rootNode);
     SetChatbotHandle(chatBot.get());
+    std::cout << "MOVING chatBot constructor" << std::endl;
     rootNode->MoveChatbotHere(std::move(chatBot));
 
     ////
