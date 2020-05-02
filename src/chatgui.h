@@ -4,7 +4,7 @@
 #include <memory>
 #include <wx/wx.h>
 
-using std::shared_ptr;
+using std::unique_ptr;
 
 class ChatLogic; // forward declaration
 
@@ -19,7 +19,7 @@ private:
     //// STUDENT CODE
     ////
 
-    shared_ptr<ChatLogic> _chatLogicPtr;
+    unique_ptr<ChatLogic> _chatLogicPtr;
 
     ////
     //// EOF STUDENT CODE
@@ -30,7 +30,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    shared_ptr<ChatLogic> GetChatLogicHandle() { return _chatLogicPtr; }
+    ChatLogic* GetChatLogicHandle() { return _chatLogicPtr.get(); }
 
     // events
     void paintEvent(wxPaintEvent &evt);
