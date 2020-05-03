@@ -224,7 +224,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     ChatBot chatBot = ChatBot("../images/chatbot.png");
     chatBot.SetChatLogicHandle(this);
     chatBot.SetRootNode(rootNode);
-    chatBot.SetCurrentNode(rootNode);
     _chatBot = &chatBot;
     rootNode->MoveChatbotHere(std::move(chatBot));
 
