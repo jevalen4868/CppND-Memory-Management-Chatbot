@@ -112,6 +112,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
     // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
+        delete source._image;
         source._image = NULL;
     }
     source._chatLogic = nullptr;
