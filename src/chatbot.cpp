@@ -59,7 +59,7 @@ ChatBot &ChatBot::operator=(const ChatBot &source) {
     // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        _image = NULL;
+        //_image = NULL;
     }
     _chatLogic = nullptr;
     _rootNode = nullptr;
@@ -81,7 +81,7 @@ ChatBot::ChatBot(ChatBot &&source) {
     
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        source._image = NULL;
+        //source._image = NULL;
     }
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
@@ -94,7 +94,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
 
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        _image = NULL;
+        //_image = NULL;
     }
     _chatLogic = nullptr;
     _rootNode = nullptr;
@@ -105,10 +105,9 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
 
-    // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        source._image = NULL;
+        //source._image = NULL;
     }
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
