@@ -59,12 +59,11 @@ ChatBot &ChatBot::operator=(const ChatBot &source) {
     // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        delete _image;
         _image = NULL;
     }
-    delete _chatLogic;
-    delete _rootNode;
-    delete _currentNode;
+    _chatLogic = nullptr;
+    _rootNode = nullptr;
+    _currentNode = nullptr;
 
     _image = source._image;
     _chatLogic = source._chatLogic;
@@ -80,7 +79,6 @@ ChatBot::ChatBot(ChatBot &&source) {
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
     
-    // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
         source._image = NULL;
@@ -94,7 +92,6 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
     std::cout << "ChatBot move assignment constructor" << std::endl;
     if(this == &source) { return *this; }
 
-    // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
         _image = NULL;
@@ -111,7 +108,6 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
     // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        delete source._image;
         source._image = NULL;
     }
     source._chatLogic = nullptr;
