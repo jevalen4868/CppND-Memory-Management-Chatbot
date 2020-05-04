@@ -48,7 +48,7 @@ ChatBot::~ChatBot()
 ////
 
 ChatBot::ChatBot(const ChatBot &source) 
-: _image{source._image}, _chatLogic{source._chatLogic}, _rootNode{source._rootNode}, _currentNode{source._currentNode} {
+: _image{source._image}, _chatLogic{source._chatLogic}, _rootNode{source._rootNode} {
     std::cout << "ChatBot copy constructor" << std::endl;
 }
 
