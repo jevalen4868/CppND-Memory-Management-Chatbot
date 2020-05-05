@@ -12,9 +12,6 @@ GraphNode::~GraphNode()
     //// STUDENT CODE
     ////
 
-    // Chatbot is only shared with this object, so not deleted here.
-    // delete _chatBot; 
-
     ////
     //// EOF STUDENT CODE
 }
@@ -45,7 +42,6 @@ void GraphNode::MoveChatbotHere(ChatBot chatbot)
 void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
   newNode->MoveChatbotHere(std::move(_chatBot));
-    //_chatBot = nullptr; // invalidate pointer at source
 }
 ////
 //// EOF STUDENT CODE
